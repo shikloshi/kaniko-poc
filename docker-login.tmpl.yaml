@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: docker-hub-auth
+    labels:
+        type: auth 
+        component: output
+        vendor: docker-hub # option to the crd metadata
+data:
+    config.json: "$(echo -n "USERNAME:PASSWORD" | base64)"
